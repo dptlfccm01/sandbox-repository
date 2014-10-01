@@ -1,4 +1,4 @@
-package com.springprojecttest.app.controller;
+package com.springprojecttest.app.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.springprojecttest.app.model.Login;
+import com.springprojecttest.app.web.model.Login;
 
 @Controller
 public class LoginController {
