@@ -9,14 +9,14 @@ import java.util.List;
 import com.springprojecttest.db.domain.User;
 
 public class FileController {
-
-	private List<User> userList;
+	
+	List<String> list;
 	
 	public FileController(){}
 	
 	public void readFile() throws IOException{
 		
-		userList = new ArrayList<User>();
+		list = new ArrayList<String>();
 		
 		try{
 			BufferedReader reader = new BufferedReader(new FileReader("src/resources/usersdb.txt"));
@@ -28,8 +28,7 @@ public class FileController {
 					continue;
 				}
 				System.out.println("OUT> "+line);
-				String[] fields = line.split(", ");
-				userList.add(new User(Integer.parseInt(fields[0]), fields[1], fields[2], fields[3]));
+				list.add(line);
 			}
 			reader.close();
 		}
@@ -39,13 +38,16 @@ public class FileController {
 		}
 	}
 
-	public List<User> getUserList() {
-		return userList;
+	public List<String> getList() {
+		return list;
 	}
 
-	public void setUserList(List<User> userList) {
-		this.userList = userList;
+	public void setList(List<String> list) {
+		this.list = list;
 	}
+	
+	
+
 	
 	
 	

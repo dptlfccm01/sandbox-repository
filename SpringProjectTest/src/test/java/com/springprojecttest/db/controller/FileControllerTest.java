@@ -12,7 +12,7 @@ public class FileControllerTest {
 	public void testReadFile() throws IOException{
 		FileController fc = new FileController();
 		fc.readFile();
-		assertEquals(fc.getUserList().size(), 2);
+		assertEquals(fc.getList().size(), 2);
 	}
 
 }
