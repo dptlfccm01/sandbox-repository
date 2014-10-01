@@ -39,9 +39,9 @@ public class FileController {
 		}
 	}
 	
-	public void writeToFile(String value) throws IOException{
+	public void writeToFile(String value, boolean appendData) throws IOException{
 		try{
-			BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true));
+			BufferedWriter writer = new BufferedWriter(new FileWriter(filename, appendData));
 			writer.write(value);
 			writer.newLine();
 			writer.close();
