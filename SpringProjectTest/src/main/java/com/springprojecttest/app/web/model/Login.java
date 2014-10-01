@@ -1,4 +1,4 @@
-package com.springprojecttest.app.model;
+package com.springprojecttest.app.web.model;
 
 public class Login {
 
