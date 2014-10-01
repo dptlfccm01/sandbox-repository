@@ -23,5 +23,21 @@ public class UserFileController extends FileController{
 		return userList;
 	}
 	
+	public void addUser(User user) throws IOException{
+		writeToFile(user.toString(), true);
+	}
 	
+	/*This method could either return a user or return null*/
+	public User getUserById(int id){
+		List<String> fileRecords = getList();
+		User user = null;
+		for(Iterator<String> it = fileRecords.iterator(); it.hasNext();){
+			String[] fields = it.next().split(", ");
+			if(Integer.parseInt(fields[0]) == id){
+				user = new User(Integer.parseInt(fields[0]), fields[1], fields[2], fields[3]);
+				break;
+			}
+		}
+		return user;
+	}
 }
