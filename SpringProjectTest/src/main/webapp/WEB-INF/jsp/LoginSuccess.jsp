@@ -8,6 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-Welcome
+Welcome:
+<br/>
+<p>Username: <c:out value="${login.username}" /></p>
+<p>password: <c:out value="${login.password}" /></p>
 </body>
 </html>
