@@ -10,9 +10,15 @@ public class FileControllerTest {
 
 	@Test
 	public void testReadFile() throws IOException{
-		FileController fc = new FileController();
+		FileController fc = new FileController("src/resources/usersdb.txt");
 		fc.readFile();
-		assertEquals(fc.getList().size(), 2);
+		assertTrue(fc.getList().size() >= 2);
 	}
 
+	
+	@Test
+	public void testWriteFile() throws IOException{
+		FileController fc2 = new FileController("src/resources/usersdb.txt");
+		fc2.writeToFile("Testing");
+	}
 }
