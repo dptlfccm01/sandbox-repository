@@ -19,6 +19,8 @@ public class ResultFileControllerTest {
 	@Before
 	public void before() throws Exception{
 		filename = PropertyManager.getInstance().getResultDBPath();
+		ResultFileController rfc = new ResultFileController(filename);
+		rfc.writeToFile("id, userId, pollId, choiceNumber\n1, 1, 1, 4\n2, 3, 1, 3\n3, 2, 3, 1", false);	
 	}
 	
 	@Test
@@ -28,6 +30,14 @@ public class ResultFileControllerTest {
 		List<Result> results = rfc.getResultsByPollId(1);
 		assertEquals(results.size(), 2);
 		
+	}
+	
+	@Test
+	public void testAddResult() throws IOException{
+		ResultFileController rfc = new ResultFileController(filename);
+		rfc.addResult(new Result(4, 2, 2, 1));
+		rfc.readFile();
+		assertEquals(1, rfc.getResultsByPollId(3).size()); //there should only be 1 result with poll id: 3
 	}
 	
 	@After

@@ -48,5 +48,9 @@ public class Result {
 		this.choiceNumber = choiceNumber;
 	}
 	
+	@Override
+	public String toString(){
+		return getId()+", "+getUserId()+", "+getPollId()+", "+getChoiceNumber();
+	}
 	
 }
