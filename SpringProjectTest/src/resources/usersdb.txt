@@ -12,3 +12,5 @@ id, username, password, email
 1, bruce, grove, bruce@gmail.com
 1, bruce, grove, bruce@gmail.com
 5, Dan, Ford, danford@dan.com
+1, bruce, grove, bruce@gmail.com
+5, Dan, Ford, danford@dan.com
