@@ -5,6 +5,10 @@ import static org.junit.Assert.*;
 import java.io.IOException;
 import java.util.List;
 
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.ObjectWriter;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -38,6 +42,16 @@ public class ResultFileControllerTest {
 		rfc.addResult(new Result(4, 2, 2, 1));
 		rfc.readFile();
 		assertEquals(1, rfc.getResultsByPollId(3).size()); //there should only be 1 result with poll id: 3
+	}
+	
+	@Test
+	public void testJSON() throws JsonGenerationException, JsonMappingException, IOException{
+		ResultFileController rfc = new ResultFileController(filename);
+		rfc.readFile();
+		List<Result> results = rfc.getResultsByPollId(1);
+		ObjectWriter obj = new ObjectMapper().writer().withDefaultPrettyPrinter();
+		String json = obj.writeValueAsString(results);
+		System.out.println(json);
 	}
 	
 	@After

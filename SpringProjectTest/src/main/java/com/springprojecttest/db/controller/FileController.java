@@ -29,7 +29,6 @@ public class FileController {
 					iteration++;
 					continue;
 				}
-				System.out.println("OUT> "+line);
 				list.add(line);
 			}
 			reader.close();
