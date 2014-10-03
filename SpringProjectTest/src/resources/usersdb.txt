@@ -4,3 +4,4 @@ id, firstname, lastname, email
 3, Dave, Smith, dave@dave.com
 4, Abi, Tom, abi@abi.com
 5, Marty, Fall, marty@marty.com
+6, James, Mansion, james@james.com

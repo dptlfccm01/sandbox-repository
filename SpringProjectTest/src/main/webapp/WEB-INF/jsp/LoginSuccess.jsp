@@ -12,5 +12,11 @@ Welcome:
 <br/>
 <p>Username: <c:out value="${login.username}" /></p>
 <p>password: <c:out value="${login.password}" /></p>
+<br/>
+<h3>List of Polls</h3>
+<c:forEach items="${pollList}" var="item">
+   <input type="radio" name="poll" value="${item.title}">${item.title}<br>
+</c:forEach>
+
 </body>
 </html>
