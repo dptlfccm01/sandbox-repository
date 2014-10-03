@@ -17,6 +17,18 @@
 <welcome-file>default.htm</welcome-file>
 <welcome-file>default.jsp</welcome-file>
 </welcome-file-list>
+<servlet>
+	<servlet-name>ServletAdaptor</servlet-name>
+	<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+	<init-param>
+		<param-name>com.sun.jersey.config.property.packages</param-name>
+		<param-value>com.springprojecttest.db.ws</param-value>
+	</init-param>
+</servlet>
+<servlet-mapping>
+	<servlet-name>ServletAdaptor</servlet-name>
+	<url-pattern>/rest/*</url-pattern>
+</servlet-mapping>
 
 </web-app>
 	
